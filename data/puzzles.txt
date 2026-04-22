@@ -1,0 +1,4 @@
+# Name | Description | Answer | Max Attempts
+Riddle of the Sphinx|I have a city, but no houses. A forest, but no trees. What am I?|map|3
+The Door Lock|What has hands but cannot clap?|clock|3
+Ancient Code|What is 2 + 2?|4|1
