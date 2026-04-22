@@ -1,0 +1,4 @@
+# Name | Description | Health | Attack Damage | Critical Threshold (0.0-1.0)
+Goblin|A small green creature with sharp teeth. It snarls at you.|30|8|0.3
+Orc|A tall, muscular creature with a menacing presence.|50|12|0.4
+Dragon|A massive winged creature that breathes fire. Its scales gleam with ancient power.|100|20|0.5

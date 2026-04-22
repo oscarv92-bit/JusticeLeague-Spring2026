@@ -1,0 +1,6 @@
+# ID | Name | Description | Exits (North,East,South,West)
+0|Entrance Hall|You stand in a grand entrance hall. Torches flicker on the walls.|1,2,-1,-1
+1|Library|Books line shelves reaching the ceiling. Dust particles dance in the light.|3,-1,0,-1
+2|Dungeon|Dark stone walls surround you. You hear strange sounds echoing.|-1,4,-1,0
+3|Tower|You're at the top of an ancient tower. A cold wind blows through.|-1,-1,1,-1
+4|Treasure Room|Gold coins and jewels glitter in the darkness.|-1,-1,2,-1

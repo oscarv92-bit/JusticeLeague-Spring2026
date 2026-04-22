@@ -1,0 +1,6 @@
+# Name | Description | Attack Bonus | Healing Points
+Iron Sword|A sturdy sword with a sharp blade.|15|0
+Wooden Bow|A simple bow for ranged attacks.|8|0
+Health Potion|A glowing red potion that restores health.|0|30
+Ancient Shield|An ornate shield that boosts defense.|10|0
+Healing Herb|A medicinal herb that restores vitality.|0|15
