@@ -13,7 +13,7 @@ public class GameMapWindow {
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        ImageIcon mapIcon = new ImageIcon("src/images/dunkin_map.png");
+        ImageIcon mapIcon = new ImageIcon("src/image/dunkin_map.png");
         JLabel mapLabel = new JLabel(mapIcon);
 
         JScrollPane scrollPane = new JScrollPane(mapLabel);

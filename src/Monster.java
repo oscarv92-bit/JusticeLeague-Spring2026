@@ -191,9 +191,9 @@ public class Monster {
         StringBuilder sb = new StringBuilder("You search the body and find: ");
         for (int i = 0; i < lootTable.size(); i++) {
             Item item = lootTable.get(i);
-            item.pickUp();
+            item.pickup();
             playerInventory.add(item);
-            sb.append(item.getName());
+            sb.append(item.getItemName());
             if (i < lootTable.size() - 1) sb.append(", ");
         }
         sb.append(".");

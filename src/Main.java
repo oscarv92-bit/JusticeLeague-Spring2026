@@ -36,7 +36,8 @@ public class Main {
         // Uncomment these two lines and remove the null line once the image is ready:
         // GameMapWindow mapWindow = new GameMapWindow();
         // mapWindow.showMap();
-        GameMapWindow mapWindow = null;
+        GameMapWindow mapWindow = new GameMapWindow();
+        mapWindow.showMap();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -365,7 +366,7 @@ public class Main {
                 } else {
                     Puzzle p = currentRoom.getPuzzle();
                     if (p instanceof AnswerPuzzle) {
-                        System.out.println(((AnswerPuzzle) p).guess(guessStr, player));
+                        System.out.println(((AnswerPuzzle) p).solve(guessStr, player));
                     } else {
                         System.out.println("That puzzle is not solved by guessing a number.");
                     }

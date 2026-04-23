@@ -84,6 +84,22 @@ public class Item {
         this.compatibleWeaponIDs = new ArrayList<>(compatibleWeaponIDs);
         this.equipped = false;
     }
+    // New Constructors FIX
+    public Item(String itemName, String itemDescription) {
+        this.itemID = 0;
+        this.itemName = itemName;
+        this.itemDescription = itemDescription;
+        this.location = -1;
+        this.itemType = "misc";
+        this.damage = 0;
+        this.hitPercentage = 0;
+        this.defense = 0;
+        this.healthBoost = 0;
+        this.scrapValue = 0;
+        this.ammoCapacity = 0;
+        this.compatibleWeaponIDs = new ArrayList<>();
+        this.equipped = false;
+    }
 
     // Getters
     public int getItemID() {
@@ -227,5 +243,14 @@ public class Item {
 
     public void unequip() {
         this.equipped = false;
+    }
+
+    // New Methods FIX
+    public String getName() {
+        return itemName;
+    }
+
+    public void pickUp() {
+        this.location = -1;
     }
 }
