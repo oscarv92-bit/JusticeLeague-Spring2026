@@ -1,0 +1,15 @@
+3,Normal Zombie
+4,Crawler
+5,Normal Zombie
+6,CIA Officer
+7,Zombie Billy
+9,Spitter
+11,Crawler
+13,Screamer
+15,La Bronx Gangster
+16,Normal Zombie
+19,La Bronx Gangster
+20,Normal Zombie
+23,Spitter
+25,Infected CIA Agent
+30,Infected CIA Agent
