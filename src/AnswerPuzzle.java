@@ -1,126 +1,98 @@
+import java.util.Random;
+
 public class AnswerPuzzle extends Puzzle {
+    private String answer;
+    private String riddleText;
+    private boolean randomMode;
+    private int minRoll;
+    private int maxRoll;
+    private int winningNumber;
+    private Random random;
 
-    // For text-answer puzzles (e.g. riddles, vault codes)
-    private final String correctAnswer;   // null if this is a number-range puzzle
-    private final String riddle;          // optional riddle text shown to player; may be null
-
-    // For number-range puzzles (e.g. motel key guessing)
-    private final Integer rangeMin;       // null if this is a text-answer puzzle
-    private final Integer rangeMax;
-    private final Integer correctNumber;
-
-    // -------------------------------------------------------
-    // CONSTRUCTOR — text answer (riddle / vault code)
-    // -------------------------------------------------------
-
-    /**
-     * @param correctAnswer  The exact string the player must type (case-insensitive).
-     * @param riddle         Optional riddle/prompt shown when player examines the puzzle.
-     *                       Pass null to use the normal description instead.
-     */
     public AnswerPuzzle(String id, String objectName, String description, String searchText,
                         String failMessage, String successMessage, int maxAttempts,
-                        Item reward, String correctAnswer, String riddle) {
+                        Item reward, String answer, String riddleText) {
         super(id, objectName, description, searchText, failMessage, successMessage, maxAttempts, reward);
-        this.correctAnswer  = correctAnswer;
-        this.riddle         = riddle;
-        this.rangeMin       = null;
-        this.rangeMax       = null;
-        this.correctNumber  = null;
+        this.answer = answer.toLowerCase().trim();
+        this.riddleText = riddleText;
+        this.randomMode = false;
     }
 
-    // -------------------------------------------------------
-    // CONSTRUCTOR — number-range guess (e.g. motel key 1-10)
-    // -------------------------------------------------------
-
-    /**
-     * @param correctNumber  The correct integer within [rangeMin, rangeMax].
-     * @param rangeMin       Lowest valid guess.
-     * @param rangeMax       Highest valid guess.
-     */
     public AnswerPuzzle(String id, String objectName, String description, String searchText,
                         String failMessage, String successMessage, int maxAttempts,
-                        Item reward, int correctNumber, int rangeMin, int rangeMax) {
+                        Item reward, int minRoll, int maxRoll, int winningNumber) {
         super(id, objectName, description, searchText, failMessage, successMessage, maxAttempts, reward);
-        this.correctAnswer  = null;
-        this.riddle         = null;
-        this.correctNumber  = correctNumber;
-        this.rangeMin       = rangeMin;
-        this.rangeMax       = rangeMax;
+        this.randomMode = true;
+        this.minRoll = minRoll;
+        this.maxRoll = maxRoll;
+        this.winningNumber = winningNumber;
+        this.random = new Random();
     }
-
-    // -------------------------------------------------------
-    // EXAMINE — show riddle if present
-    // -------------------------------------------------------
 
     @Override
     public String examine(String target) {
-        if (!target.equalsIgnoreCase(objectName)) return "There is nothing like that here.";
-        if (solved) return "You already solved this puzzle.";
-        if (failed) return "This puzzle can no longer be completed.";
+        String base = super.examine(target);
 
-        if (riddle != null && !riddle.isEmpty()) {
-            return description + "\n" + riddle;
+        if (!randomMode && riddleText != null && base.equals(description)) {
+            return description + "\n" + riddleText;
         }
-        if (isNumberRangePuzzle()) {
-            return description + "\nGuess a number between " + rangeMin + " and " + rangeMax + ".";
-        }
-        return description;
+
+        return base;
     }
-
-    // -------------------------------------------------------
-    // SOLVE — text answer
-    // -------------------------------------------------------
 
     @Override
     public String solve(String input, Player player) {
-        if (solved) return "You already solved this puzzle.";
-        if (failed) return "This puzzle can no longer be completed.";
-        if (isNumberRangePuzzle()) return "This puzzle requires a number, not a text answer.";
+        if (randomMode) {
+            return "This puzzle should be attempted, not solved with an answer.";
+        }
 
-        if (input != null && input.trim().equalsIgnoreCase(correctAnswer)) {
+        if (solved) {
+            return "You already solved this puzzle.";
+        }
+
+        if (failed) {
+            return "This puzzle can no longer be completed.";
+        }
+
+        if (input == null || input.trim().isEmpty()) {
+            return handleFailedAttempt(player);
+        }
+
+        if (input.toLowerCase().trim().equals(answer)) {
             return finishPuzzle(player);
         }
+
         return handleFailedAttempt(player);
     }
 
-    // -------------------------------------------------------
-    // ATTEMPT — number-range guess
-    // -------------------------------------------------------
-
-    /**
-     * Called with the player's integer guess as a string.
-     * Returns feedback without revealing the answer.
-     */
-    public String guess(String guessStr, Player player) {
-        if (solved) return "You already solved this puzzle.";
-        if (failed) return "This puzzle can no longer be completed.";
-        if (!isNumberRangePuzzle()) return "This puzzle requires a text answer, not a number.";
-
-        int guess;
-        try {
-            guess = Integer.parseInt(guessStr.trim());
-        } catch (NumberFormatException e) {
-            return "Please enter a number between " + rangeMin + " and " + rangeMax + ".";
+    @Override
+    public String attempt(Player player) {
+        if (!randomMode) {
+            return "That puzzle cannot be attempted that way.";
         }
 
-        if (guess < rangeMin || guess > rangeMax) {
-            return "That number is out of range. Pick between " + rangeMin + " and " + rangeMax + ".";
+        if (solved) {
+            return "You already solved this puzzle.";
         }
 
-        if (guess == correctNumber) {
-            return finishPuzzle(player);
+        if (failed) {
+            return "This puzzle can no longer be completed.";
         }
 
-        // Give higher/lower hint
-        String hint = (guess < correctNumber) ? "Too low." : "Too high.";
-        return handleFailedAttempt(player) + " " + hint;
+        int roll = random.nextInt(maxRoll - minRoll + 1) + minRoll;
+
+        if (roll == winningNumber) {
+            return finishPuzzle(player) + "\nYou rolled: " + roll;
+        }
+
+        attemptsUsed++;
+
+        if (attemptsUsed >= maxAttempts) {
+            failed = true;
+            applyExplosionPenalty(player);
+            return failMessage + "\nYou rolled: " + roll + "\nThe puzzle explodes and damages you badly.";
+        }
+
+        return failMessage + "\nYou rolled: " + roll + "\nAttempts left: " + getAttemptsLeft();
     }
-
-    // -------------------------------------------------------
-    // HELPERS
-    // -------------------------------------------------------
-
-    public boolean isNumberRangePuzzle() { return correctNumber != null; }
-    public boolean isTextAnswerPuzzle()  { return correctAnswer != null; }
 }
