@@ -1,0 +1,47 @@
+# format: id,name,description,roomNumber,type,damage,hitPct,defense,healthBoost,scrapVal,ammo[,compatibleIDs]
+# roomNumber 0 = obtained via puzzle reward or monster loot only
+1,Crowbar,A hard steel crowbar could be used to break something,17,weapon,30,95,0,0,0,0
+2,Wood Plank,A one foot long wooden plank,2,weapon,15,95,0,0,0,0
+3,Fire Axe,Strong sharp fire axe,15,weapon,45,95,0,0,0,0
+4,Bat,A regular wooden bat,18,weapon,20,95,0,0,0,0
+5,Ka-Bar Utility Knife,A combat knife that is so sharp it can cut through the stability of the nation,16,weapon,35,95,0,0,0,0
+6,M4,A full automatic rifle that packs powerful piercing rounds,27,weapon,20,75,0,0,0,30
+7,Glock 19,A powerful semi-automatic handgun,15,weapon,35,75,0,0,0,10
+8,Double Barrel,Powerful shotgun,26,weapon,50,65,0,0,0,4
+9,Sawed off Double Barrel,Another version of double barrel shotgun but sawed off,18,weapon,60,60,0,0,0,4
+10,Red Dot Sight,Aim attachment for Glock 19,9,attachment,0,10,0,0,0,0,7
+11,TA31RCO,Rifle sight for M4,29,attachment,0,12,0,0,0,0,6
+12,Vortex Strike Eagle,Rifle sight for M4,29,attachment,0,17,0,0,0,0,6
+13,Saw Blade,Attachment that adds damage to any melee weapon,4,attachment,5,0,0,0,0,0,1|2|3|4|5
+14,Armor plate,Armor plate that absorbs impact from damages,6,armor,0,0,3,0,0
+15,Blue Jeans,A regular pair of jeans,10,armor,0,0,2,0,2
+16,Button Up Black Shirt,A button up black shirt crafted by a skilled craftsman,17,armor,0,0,2,0,2
+17,Runner Joggers,A pair of joggers stolen from a runner,0,armor,0,0,2,0,2
+18,Skirt,A pretty pink skirt that makes you feel bonita,24,armor,0,0,1,0,1
+19,Dunkin Donut Apron,This apron has donut cream stains but do not underestimate it,1,armor,0,0,1,0,1
+20,Striker Ult Combat Pants,A pair of high performance tactical pants,19,armor,0,0,3,0,3
+21,La Bronx Bandana,A fiber headband that symbolizes honor for a group of gangsters,21,armor,0,0,1,0,1
+22,BaseBall Helmet,A New York Yankee baseball helmet made of hardened plastic,3,armor,0,0,2,0,0
+23,Police Riot Helmet,Strong Police Riot helmet worn by your local law enforcement,6,armor,0,0,2,0,0
+24,Ops Core Fast SF Helmet,A helmet used in specialized forces of the United States,25,armor,0,0,4,0,0
+25,Bikers glove,A pair of gloves made with basic fiber for biking,10,armor,0,0,2,0,2
+26,Dunkin Donut Plastic Glove,A pair of plastic gloves with the hard work of Dunkin employees enchanted into them,1,armor,0,0,1,0,0
+27,Baseball glove,A high quality baseball glove meant to absorb decent impact,11,armor,0,0,2,0,2
+28,Rotten Flesh,A chunk of flesh looking for its final destination,3,misc,0,0,0,0,0
+29,Silver Locket,A silver locket from Billy. A Kawaii zombie wanted nothing but a lifelong partner.,0,misc,0,0,0,0,0
+30,Coin,A unique coin that can trick the vending machine. Can be used to solve puzzles across the map,28,misc,0,0,0,0,0
+31,Car Battery,A car battery that is clearly meant for something,21,misc,0,0,0,0,0
+32,Electric Scooter,A motor vehicle that can improve your speed,0,misc,0,0,0,0,0
+33,Keycard,Found within the Medkit. Might be used for opening something,11,misc,0,0,0,0,0
+34,Bolt Cutters,Able to cut through hard steel wire,9,misc,0,0,0,0,0
+35,Police Badge,A regular police badge. Could be used to open something?,21,misc,0,0,0,0,0
+36,Donut,A juicy glazed creamy donut,2,consumable,0,0,0,5,0
+37,Banana,A beautiful fruit generated from mother Earth,5,consumable,0,0,0,7,0
+38,Apple,A beautiful fruit that was a key factor in the discovery of physics,23,consumable,0,0,0,7,0
+39,Rare Banana,An extremely rare banana given to you by a monkey. Eat it or keep it as a memory,0,consumable,0,0,0,25,0
+40,Hot Dog,A hot steamy hot dog fresh off the grill,4,consumable,0,0,0,3,0
+41,Scrap Cloth,Just an old piece of cloth that is able to stop bleeding,16,consumable,0,0,0,10,0
+42,Bandage,Bandage from your favorite local hospital,0,consumable,0,0,0,40,0
+43,Pizza,A fresh hot pizza that just came out of Dominos,21,consumable,0,0,0,7,0
+44,Splint,To fix broken limbs,3,consumable,0,0,0,10,0
+45,Cure,A powerful serum kept away from the public. A dirty creation from the government's secret plan,30,consumable,0,0,0,100,0

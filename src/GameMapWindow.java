@@ -5,7 +5,8 @@ import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 
 public class GameMapWindow {
-    private JFrame frame;
+
+    private JFrame  frame;
     private boolean visible;
 
     public GameMapWindow() {
@@ -13,8 +14,8 @@ public class GameMapWindow {
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        ImageIcon mapIcon = new ImageIcon("src/images/dunkin_map.png");
-        JLabel mapLabel = new JLabel(mapIcon);
+        ImageIcon mapIcon = new ImageIcon("src/image/dunkin_map.png");
+        JLabel    mapLabel = new JLabel(mapIcon);
 
         JScrollPane scrollPane = new JScrollPane(mapLabel);
         frame.add(scrollPane, BorderLayout.CENTER);
@@ -34,7 +35,5 @@ public class GameMapWindow {
         visible = false;
     }
 
-    public boolean isVisible() {
-        return visible;
-    }
+    public boolean isVisible() { return visible; }
 }
