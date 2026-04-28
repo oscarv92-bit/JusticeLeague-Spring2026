@@ -1,0 +1,25 @@
+--- COMMANDS ---
+N / E / S / W                   -- move
+SEARCH                          -- search room for items and puzzles
+EXPLORE                         -- list items in this room
+PICKUP <item>                   -- pick up an item
+DROP <item>                     -- drop an item
+INVENTORY                       -- show inventory
+EQUIPMENT                       -- show equipped gear
+INSPECT <item>                  -- read item description
+EQUIP <item>                    -- equip weapon or armor
+UNEQUIP <item>                  -- unequip an item back to inventory
+ATTACH <attachment> TO <weapon> -- attach a mod
+USE <item>                      -- use a consumable
+USE <item> ON <target>          -- use item on puzzle object
+EXAMINE <object>                -- examine a puzzle object
+SOLVE <answer>                  -- solve a riddle or code puzzle
+GUESS <number>                  -- guess for a number puzzle
+LOOT                            -- loot a defeated enemy
+RELOAD                          -- reload your equipped weapon
+RELOAD <weapon>                 -- reload a specific equipped weapon
+ATTACK                          -- attack an enemy
+FEED BILLY                      -- feed Billy rotten flesh
+STATUS                          -- check health
+MAP                             -- toggle map window
+Q                               -- quit

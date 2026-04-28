@@ -1,15 +1,92 @@
-3,Normal Zombie
+# format: roomNumber,MonsterType
+# Monster type strings must exactly match the constants in Monster.java
+# -----------------------------------------------------------------------
+# Room 2 — Dunkin Donuts
+2,Crawler
+# Room 4 — BP Station
 4,Crawler
-5,Normal Zombie
-6,CIA Officer
+4,Crawler
+# Room 5 — Zoo
+5,Screamer
+# Room 6 — Police Station
+6,Normal Zombie
+6,Normal Zombie
+# Room 7 — Cells (Billy)
 7,Zombie Billy
+# Room 8 — South Main Street
+8,Screamer
+8,Normal Zombie
+# Room 9 — Decatur Ave.
+9,La Bronx Gangster
 9,Spitter
+# Room 11 — Parking Garage
+11,Normal Zombie
+11,Normal Zombie
+11,Normal Zombie
 11,Crawler
+11,Crawler
+# Room 13 — Apartments
 13,Screamer
-15,La Bronx Gangster
-16,Normal Zombie
+13,Screamer
+13,Normal Zombie
+13,Normal Zombie
+13,Normal Zombie
+# Room 14 — Main Street
+14,CIA Officer
+# Room 15 — Hull Ave.
+15,Normal Zombie
+15,Normal Zombie
+15,Normal Zombie
+15,Screamer
+# Room 16 — Back Alley
+16,La Bronx Gangster
+16,La Bronx Gangster
+# Room 17 — Record Store
+17,La Bronx Gangster
+# Room 18 — Corner Store
+18,Normal Zombie
+18,Normal Zombie
+# Room 19 — North Main Street
 19,La Bronx Gangster
-20,Normal Zombie
+19,La Bronx Gangster
+19,La Bronx Gangster
+19,La Bronx Gangster
+# Room 20 — E. 240th Street
+20,CIA Officer
+20,Spitter
+20,Spitter
+20,Spitter
+# Room 21 — Domino's Pizza
+21,Normal Zombie
+21,Normal Zombie
+21,Normal Zombie
+21,Normal Zombie
+21,Screamer
+# Room 23 — Supermarket
 23,Spitter
+23,Normal Zombie
+23,Normal Zombie
+23,Normal Zombie
+23,Normal Zombie
+23,Normal Zombie
+# Room 25 — Bainbridge Ave.
 25,Infected CIA Agent
+# Room 27 — Backroom
+27,Spitter
+# Room 28 — City Park
+28,Screamer
+28,Screamer
+28,Normal Zombie
+28,Normal Zombie
+# Room 29 — Bank
+29,Normal Zombie
+29,Normal Zombie
+29,Normal Zombie
+29,Normal Zombie
+29,Normal Zombie
+29,Normal Zombie
+29,Normal Zombie
+# Room 30 — Medical Facility
+30,Infected CIA Agent
+30,Infected CIA Agent
 30,Infected CIA Agent
